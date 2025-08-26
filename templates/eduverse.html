@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="courses-page">
+    <h2>Kurslar</h2>
+
+    <!-- Filter Links -->
+    <div class="filter-buttons">
+        <a href="#" class="filter-btn active" data-category="all">Barchasi</a>
+        <a href="#" class="filter-btn" data-category="html">HTML</a>
+        <a href="#" class="filter-btn" data-category="JS">JS</a>
+        <a href="#" class="filter-btn" data-category="css">CSS</a>
+        <a href="#" class="filter-btn" data-category="python">Python</a>
+        <a href="#" class="filter-btn" data-category="blender">Blender</a>
+        <a href="#" class="filter-btn" data-category="csharp">C#</a>
+        <a href="#" class="filter-btn" data-category="unity">Unity</a>
+    </div>
+
+    <!-- Courses Grid -->
+    <div class="courses" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div class="course-card" data-category="html">
+            <div class="card-img">
+                <img src="" alt="HTML">
+                <span class="crown">👑</span>
+            </div>
+            <div class="card-body">
+                <h3>Курс Александра Ламкова - HTML</h3>
+                <div class="rating">
+                    <span>4.5</span>
+                    ⭐⭐⭐⭐☆
+                </div>
+                <div class="meta">
+                    <span>👤 446 o'quvchi</span>
+                    <span>🎬 18 video</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="css">
+            <div class="card-img">
+                <img src="" alt="CSS">
+                <span class="crown">👑</span>
+            </div>
+            <div class="card-body">
+                <h3>Курс Александра Ламкова - CSS</h3>
+                <div class="rating">
+                    <span>4.4</span>
+                    ⭐⭐⭐⭐☆
+                </div>
+                <div class="meta">
+                    <span>👤 221 o'quvchi</span>
+                    <span>🎬 21 video</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="python">
+            <div class="card-img">
+                <img src="" alt="Python">
+                <span class="crown">👑</span>
+            </div>
+            <div class="card-body">
+                <h3>Курс Александра Ламкова - Python</h3>
+                <div class="rating">
+                    <span>4.7</span>
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <div class="meta">
+                    <span>👤 390 o'quvchi</span>
+                    <span>🎬 25 video</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-card" data-category="JS">
+            <div class="card-img">
+                <img src="" alt="Python">
+                <span class="crown">👑</span>
+            </div>
+            <div class="card-body">
+                <h3>Курс Александра Ламкова - JS</h3>
+                <div class="rating">
+                    <span>4.7</span>
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <div class="meta">
+                    <span>👤 390 o'quvchi</span>
+                    <span>🎬 25 video</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mars Dashboard</title>
+    <link rel="stylesheet" href="./../static/main_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">MARS°</div>
+        <ul>
+            <a href="{{ url_for('home') }}" style="text-decoration: none;"><li>🏠 Asosiy</li></a>
+            <a href="{{ url_for('courses') }}" style="text-decoration: none;"><li>📚 Kurslarim</li></a>
+            <a href="{{ url_for('eduverse') }}" style="text-decoration: none;"><li>🎓 Eduverse</li></a>
+            <a href="{{ url_for('marscode') }}" style="text-decoration: none;"><li>💻 MarsCode</li></a>
+            <a href="{{ url_for('blog') }}" style="text-decoration: none;"><li>📝 Blog</li></a>
+            <a href="{{ url_for('shop') }}" style="text-decoration: none;"><li>🛒 Space shop</li></a>
+        </ul>
+        
+        <div class="avatar">
+            <img class="head" src="https://lab.marsit.uz/media/hero_dashboard/None/Headset.png" alt="character head">
+            <img class="body" src="https://space.marsit.uz/img/hero-default-body.c471a504.png" alt="character body">
+            <img class="feet" src="https://space.marsit.uz/img/hero-default-feet.876a3274.png" alt="character feet">
+            <img class="stone" src="https://space.marsit.uz/img/stone.151e717a.png" alt="character feet">
+        </div>
+
+    </div>
+
+    <div class="main">
+        <header>
+            <div class="stats">
+                <span>🔥 7</span>
+                <span>🪙 19,042</span>
+                <span>⚡ 3,343</span>
+            </div>
+            <a href="{{ url_for('login') }}"><button class="subscribe">Obuna bo'ling</button></a>
+            <div class="profile">
+                <img src="https://cdn-icons-png.freepik.com/512/6400/6400258.png" alt="user">
+            </div>
+        </header>
+
+
+
+        {% block content %}
+        {% endblock content %}
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const filterBtns = document.querySelectorAll(".filter-btn");
+                const courses = document.querySelectorAll(".course-card");
+            
+                filterBtns.forEach(btn => {
+                    btn.addEventListener("click", function (e) {
+                        e.preventDefault();
+            
+                        // убираем active со всех кнопок
+                        filterBtns.forEach(b => b.classList.remove("active"));
+                        this.classList.add("active");
+            
+                        const category = this.getAttribute("data-category");
+            
+                        courses.forEach(course => {
+                            if (category === "all" || course.getAttribute("data-category") === category) {
+                                course.classList.remove("hidden");
+                            } else {
+                                course.classList.add("hidden");
+                            }
+                        });
+                    });
+                });
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+            // Лайк кнопки
+            document.querySelectorAll(".like-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                let countEl = btn.querySelector(".like-count");
+                let count = parseInt(countEl.textContent);
+
+                if (btn.classList.contains("liked")) {
+                    btn.classList.remove("liked");
+                    countEl.textContent = count - 1;
+                    btn.innerHTML = `♡ <span class="like-count">${count - 1}</span>`;
+                } else {
+                    btn.classList.add("liked");
+                    countEl.textContent = count + 1;
+                    btn.innerHTML = `❤️ <span class="like-count">${count + 1}</span>`;
+                }
+                });
+            });
+
+            // Комментарии
+            document.querySelectorAll(".comment-box button").forEach(btn => {
+                btn.addEventListener("click", () => {
+                let input = btn.previousElementSibling;
+                let text = input.value.trim();
+                if (text === "") return;
+
+                let post = btn.closest(".post-card");
+                let list = post.querySelector(".comments-list");
+                let countEl = post.querySelector(".comment-count");
+
+                // Создать новый коммент
+                let newComment = document.createElement("div");
+                newComment.classList.add("comment-item");
+                newComment.textContent = text;
+
+                list.appendChild(newComment);
+
+                // увеличить счётчик
+                let count = parseInt(countEl.textContent);
+                countEl.textContent = count + 1;
+
+                // очистить поле
+                input.value = "";
+                });
+            });
+            });
+
+
+            
+
+        </script>
+            
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS - Login</title>
+    <link rel="stylesheet" href="./../static/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">MARS<span class="circle">°</span></div>
+        <div class="lang">🌐 O'zb</div>
+    </div>
+
+    <div class="container">
+        <div class="login-box">
+            <h2 class="welcome">Spacega xush kelibsiz</h2>
+            <div class="tab">
+                <button class="active">Student</button>
+                <button>Ota-ona</button>
+            </div>
+            <form method="post">
+                <input type="text" placeholder="Modme ID" name="modme_id">
+                <input type="password" placeholder="Parol" name="parol">
+                <button type="submit" class="btn">Kirish</button>
+            </form>
+            <p class="register">
+                Akkountga ega emasmisiz? <a href="#">Ro'yxatdan o'tish</a>
+            </p>
+        </div>
+    </div>
+
+    {% if err %}
+    <script>
+        alert("Parol hato")
+    </script>
+    {% endif %}
+</body>
+
+</html>

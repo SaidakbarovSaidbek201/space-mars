@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="courses">
+    <div class="container">
+        <!-- Davom eting section -->
+        <h2 class="section-title">Davom eting...</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Starter (12-16)</h3>
+                <p class="code">ST-766</p>
+                <a href="#">Kirish ></a>
+            </div>
+
+            <div class="card">
+                <div class="icon purple">⚛️</div>
+                <h3>Programming (Front-end)</h3>
+                <p class="code">FRONT-972</p>
+                <a href="#">Kirish ></a>
+            </div>
+
+            <div class="card">
+                <div class="icon yellow">💻</div>
+                <h3>Programming (Back-end)</h3>
+                <p class="code">BACK-1366</p>
+                <a href="#">Kirish ></a>
+            </div>
+
+            <div class="card disabled">
+                <div class="icon gray">⚠️</div>
+                <h3>3 qavat ( Pro )</h3>
+                <p class="code">2312</p>
+                <a href="#">Kirish ></a>
+            </div>
+        </div>
+
+        <!-- Tekin kurslar section -->
+        <h2 class="section-title">Tekin kurslar</h2>
+        <div class="cards">
+            <div class="card free">
+                <div class="icon green">⚡</div>
+                <h3>Beginner+ (Online) <span class="badge">FREE</span></h3>
+                <a href="#">Kirish ></a>
+            </div>
+            <div class="card free">
+                <div class="icon green">⚡</div>
+                <h3>Rocket MARS <span class="badge">FREE</span></h3>
+                <a href="#">Kirish ></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

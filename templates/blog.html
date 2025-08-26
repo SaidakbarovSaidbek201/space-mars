@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="feed">
+    <!-- Fixed Input -->
+    <div class="top-bar">
+      <img src="avatar.png" class="avatar" alt="user">
+      <input type="text" placeholder="Nimala">
+    </div>
+  
+    <!-- Blog Posts -->
+    <div class="posts">
+      <!-- Blog Post -->
+      <div class="post-card">
+        <div class="post-header">
+          <img src="user.png" class="user-avatar" alt="avatar">
+          <div class="user-info">
+            <h4>Anvarbek Rajabov <span class="verified">✔</span></h4>
+            <p class="time">56 минут назад</p>
+          </div>
+        </div>
+  
+        <!-- Text content -->
+        <p class="post-text">
+          Bugun yangi rekord qoʻydim 🚀 <br>
+          Tezlik testida natijam juda yaxshi chiqdi!
+        </p>
+  
+        <!-- Image -->
+        <div class="post-image">
+          <img src="post-image.jpg" alt="post">
+        </div>
+  
+        <!-- Actions -->
+        <div class="actions">
+          <span>♡ 12</span>
+          <span>💬 3</span>
+        </div>
+  
+        <!-- Comment box -->
+        <div class="comment-box">
+          <input type="text" placeholder="Comment" maxlength="100">
+          <button>➤</button>
+        </div>
+      </div>
+  
+      <!-- Another Post -->
+      <div class="post-card">
+        <div class="post-header">
+          <img src="user2.png" class="user-avatar" alt="avatar">
+          <div class="user-info">
+            <h4>Sevara Karimova</h4>
+            <p class="time">1 soat oldin</p>
+          </div>
+        </div>
+  
+        <p class="post-text">
+          Tabiyat juda chiroyli 🍃 Bugun togʻlarga chiqdim.
+        </p>
+  
+        <div class="post-image">
+          <img src="nature.jpg" alt="mountains">
+        </div>
+  
+        <div class="actions">
+          <span>♡ 34</span>
+          <span>💬 8</span>
+        </div>
+  
+        <div class="comment-box">
+          <input type="text" placeholder="Comment" maxlength="100">
+          <button>➤</button>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+  
+
+{% endblock content %}
