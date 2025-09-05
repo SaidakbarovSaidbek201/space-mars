@@ -118,7 +118,11 @@ def shop():
     return render_template('shop.html', products=products)
 
 
+# app.py
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # создаём таблицы
     app.run(debug=True)
+
+# всегда при запуске (и на Render, и локально) создаст таблицы
+with app.app_context():
+    db.create_all()
