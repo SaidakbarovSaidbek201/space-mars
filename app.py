@@ -62,10 +62,12 @@ def home():
 def login():
     err = None
     if request.method == 'POST':
-        username = request.form.get("modme_id")   # form поле
+        username = request.form.get("modme_id")
         password = request.form.get("parol")
 
+        print(">>> FORM:", username, password)   # 👈 DEBUG
         user = Oquvchi.query.filter_by(username=username, password=password).first()
+        print(">>> USER:", user)                 # 👈 DEBUG
 
         if user:
             session['user_id'] = user.id
